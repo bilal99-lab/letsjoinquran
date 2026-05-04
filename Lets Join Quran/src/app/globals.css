@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0f172a;
+  --color-emerald: #10b981;
+  --color-gold: #fbbf24;
+  --color-cream: #fdfbf7;
+  --color-softgreen: #f0fdf4;
+}
+
+@layer base {
+  :root {
+    --background: #f8fafc;
+    --foreground: #0f172a;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans), sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Glassmorphism & 3D Utilities */
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/55 backdrop-blur-xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.04)] rounded-2xl md:rounded-[2rem];
+  }
+  
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-lg border border-white/50 shadow-[0_4px_24px_rgba(0,0,0,0.03)] rounded-2xl transition-all duration-300;
+  }
+  
+  .glass-dark {
+    @apply bg-[#0b2342]/80 backdrop-blur-2xl border border-teal-500/20 shadow-[0_16px_40px_rgba(8,26,51,0.4)] rounded-2xl md:rounded-[2rem];
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .hover-3d {
+    @apply transition-transform duration-500 ease-out;
+  }
+  
+  .hover-3d:hover {
+    transform: translateY(-8px) rotateX(4deg) rotateY(-4deg);
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.08), -20px -20px 60px rgba(255,255,255,0.8);
+  }
+
+  .hover-3d-dark:hover {
+    transform: translateY(-8px) rotateX(4deg) rotateY(-4deg);
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.4), -5px -5px 30px rgba(16,185,129,0.1);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.15);
+  }
+}
