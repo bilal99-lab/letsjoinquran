@@ -32,7 +32,7 @@ export async function POST(request: Request) {
     }
 
     // Remove honeypot from data before processing
-    const { honeypot, ...insertData } = data;
+    const { honeypot: _honeypot, ...insertData } = data;
 
     // 3. Database Insertion (if configured)
     if (supabase) {

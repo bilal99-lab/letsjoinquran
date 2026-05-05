@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { BookOpen, Mail, Phone, MapPin, MessageCircle, ChevronRight } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, ChevronRight } from "lucide-react";
 import React from "react";
 
 const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
